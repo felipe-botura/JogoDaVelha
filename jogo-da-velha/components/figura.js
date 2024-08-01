@@ -1,11 +1,18 @@
 import React from 'react'
-import { ToucheableOpacity } from 'react-native'
+import { TouchableOpacity } from 'react-native'
 import { Entypo } from '@expo/vector-icons'
 
-export default function Figura() {
+export default function Figura({ vetor, posicao, clicado }) {
+  const getIcon = () => {
+    if (vetor[posicao] !== 0) {
+      return vetor[posicao] ? "cross" : "circle";
+    }
+    return "pencil";
+  }
+
   return (
-    <ToucheableOpacity>
-      <Entypo name="circle" size={80} color="#000" />
-    </ToucheableOpacity>
+    <TouchableOpacity onPress={clicado}>
+      <Entypo name={getIcon()} size={80} color="#000" />
+    </TouchableOpacity>
   )
 }
