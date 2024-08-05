@@ -5,7 +5,7 @@ import { Entypo } from '@expo/vector-icons'
 export default function Figura({ vetor, posicao, clicado }) {
   const getIcon = () => {
     if (vetor[posicao] !== 0) {
-      return vetor[posicao] ? "cross" : "circle";
+      return vetor[posicao] ? "github" : "cross";
     }
     return "pencil";
   }
